@@ -1,0 +1,24 @@
+body{
+ background: url(../img/back.jpg);
+ background-size: cover;
+}
+.main-section{
+    transform: translateY(26px) scaley(1.106);
+
+}
+
+.background-overlay{
+    background: rgba(114, 78, 0, 0.438)
+    
+} 
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+.main-footer   {
+    text-decoration: none;
+    background-color: rgba(26, 26, 26, 0.877)   ;
+    transform: translatey(51px);
+}

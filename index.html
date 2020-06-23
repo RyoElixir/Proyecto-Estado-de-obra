@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Obras </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/styleIndex.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <!--  <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="cronograma.html">Cronograma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="obra.html">Obras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trabajador.html">Trabajadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="actividad.html">Actividades</a>
+                    </li>
+                </ul> -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a href="login.html" class="btn btn-primary" >Inisiar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-section">
+        <div class="background-overlay py-4  text-white">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <p class="display-3 font-weight-bold">Bienvenido a Gestru</p>
+                        <h2>Estás a un paso de aumentar tu eficiencia laboral enormemente</h2>
+                         <a class="btn btn-dark btn-lg">Aprender más</a>
+                    </div>
+                    <div class="col-6 mx-auto">
+                        <!--  <form action="registroUsuario"> -->
+                        <div class="card">
+                            <div class="card-header text-center bg-dark">
+                                <h4>Registrese en Gestru</h4>
+
+                            </div>
+                            <div class="card-body text-dark">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nombreTxt">Nombre</label>
+                                            <input type="text" id="nombreTxt" required class="form-control"
+                                                placeholder="Ingrese Nombre y Apellido">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="rutTxt">Rut</label>
+                                            <input type="text" id="rutTxt" name="rut" placeholder="Ingrese RUT"
+                                                class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="correoTxt">Correo</label>
+                                            <input type="text" id="correoTxt" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="contraseñaTxt">Contraseña</label>
+                                            <input type="password" id="contrasenaTxt"
+                                                placeholder="de 4 o mas caracteres" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactoTxt">Contacto</label>
+                                            <input type="number" id="contactoTxt" class="form-control"
+                                                placeholder="Solo 8 numeros">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="selectTipo">Tipo de Usuario</label>
+                                            <select class="form-control" id="tipoSelect">
+                                                <option value="seleccione" cheked>Seleccione</option>
+                                                <option value="jefe">Jefe de Obra</option>
+                                                <option value="cliente">Cliente</option>
+                                                <option value="trabajador">Trabajador</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="checkTerminos">
+                                    <label class="form-check-label" for="exampleCheck1">Acepto los Términos y
+                                        Condiciones </label>
+                                </div>
+                                <div class="form-group py-2">
+                                    <button class="btn btn-primary " onclick="registrarUsuario()"
+                                        id="registrarUsuarioBtn">Registrarse</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--</form> -->
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <footer class="main-footer  font-weight-bold py-2 text-white ">
+        <div class="row">
+            <div class="col-md-6">
+                <nav id="principal" class="menu">
+                    <ul>
+                        <li> <a class="enlace text-warning"" href=" #">
+                                <h4>Soporte</h4>
+                            </a></li>
+                        <li> <a class="enlace text-warning" href="#">
+                                <h4>Contáctanos</h4>
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col">
+                <nav id="secundaria" class="menu">
+                    <ul>
+                        <li><a class="enlace text-warning" href="#">
+                                <h4>Acerca de Nosotros</h4>
+                            </a></li>
+                        <li>
+                            <h5>versión 0.2</h5>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+
+<!-- boostrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<!-- Scripts propios -->
+<script src="js/usuarios.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+
+
+
+</html>

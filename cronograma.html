@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body onload="cargarSelectObra() ,setearFechas()">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="cronograma.html">Cronograma</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="obra.html">Obras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trabajador.html">Trabajadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="actividad.html">Actividades</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a href="index.html" class="btn btn-primary" onclick="cerrarSesion()">Cerrar Sesión</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-section">
+        <div class=" py-4 background-overlay text-white">
+            <div class="row ">
+                <div class="col-md-11 mx-auto">
+                    <div class="card">
+                        <div class="card-header  bg-success">
+                            <div class="row" id="alertCronograma">
+                                <h1 class="font-weight-light text-left">Gestión de Cronogramas</h1>
+                            </div>
+                        </div>
+                        <div class="card-body bg-dark text-center">
+                            <div class="row">
+                                <div class="col-md-2 mx-auto">
+                                    <div class="form-group">
+                                        <label for="nombreTxt">Nombre</label>
+                                        <input type="text" class="form-control " id="nombreTxt">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mx-auto">
+                                    <div class="form-group">
+                                        <label for="inicioTxt">Fecha de Inicio</label>
+                                        <input type="date" class="form-control " id="inicioTxt">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mx-auto">
+                                    <div class="form-group">
+                                        <label for="finTxt">Fecha de Término</label>
+                                        <input type="date" class="form-control " id="finTxt">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mx-auto ">
+                                    <div class="form-group">
+                                        <label for="selectEstado">Estado</label>
+                                        <select id="selectEstado" disabled class="form-control">
+                                            <option value="creado" cheked>Creado</option>
+                                            <option value="en ejecucion">En Ejecución</option>
+                                            <option value="finalizado">Finalizado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mx-auto ">
+                                    <div class="form-group">
+                                        <label for="selectObra">Obra asociada</label>
+                                        <select id="selectObra" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mx-auto ">
+                                    <label for="">Acción</label>
+                                    <div class="form-group" id="divBtnAgregar">
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group ">
+                                <table class="table table-dark table-striped table-hover table-bordered">
+                                    <thead>
+                                        <tr class="text-warning text-center text-uppercase">
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Fecha Inicio</th>
+                                            <th scope="col">Fecha Fin</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Obra</th>
+                                            <th scope="col">Eliminar</th>
+                                            <th scope="col">Modificar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableCronogramas">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <div class="modal" tabindex="-1" id="modalFase" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTittle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalBody"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info form-control" data-dismiss="modal">De acuerdo</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="js/momentjs.min.js"></script>
+    <script src="js/moment-timezone-with-data.js"></script>
+    <script src='js/cronogramas.js'></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+body{
+ background: url(../img/riseCurtain.jpg);
+ background-size: cover;
+}
+
+.gestru{
+    background-image: #eb6363;
+    color: #eb6363;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+.main-footer   {
+    text-decoration: none;
+    background-color: rgba(26, 26, 26, 0.877)   ;
+   
+}
+
+.alert{
+    align-content: center;
+}
